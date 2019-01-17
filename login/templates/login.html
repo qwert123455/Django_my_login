@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>登录页</title>
+</head>
+<body>
+  <h1>登录页</h1>
+
+{#  错误信息#}
+  <div name="message" style="color: red">
+    {% if message %}
+      {{ message }}
+    {% endif %}
+  </div>
+
+{#  登录表单#}
+  <div>
+    <form action="/login/" method="post">
+      {% csrf_token %}
+      <label>用户名：</label>
+      <input type="text" name="username" placeholder="请输入用户名">
+      <br>
+      <label>密码：</label>
+      <input type="password" name="password" placeholder="请输入密码">
+      <br>
+      <input type="submit" value="提交">
+    </form>
+  </div>
+</body>
+</html>
